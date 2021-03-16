@@ -6,6 +6,14 @@ public class Gladiator {
      */
     private String name;
 
+    private int lives;
+
+    private int maxLives;
+
+    private int maxDamage;
+
+    private int minDamage;
+
     // TODO: Add the rest of the properties
     // TODO: Generate/create getters and setters for these properties
 
@@ -14,7 +22,7 @@ public class Gladiator {
      */
     public boolean isDead() {
         // TODO:
-        throw new UnsupportedOperationException();
+        return lives <= 0;
     }
 
     /**
@@ -24,7 +32,18 @@ public class Gladiator {
     public void dealDamage(Gladiator enemy) {
         // TODO:
         // Generate the random value, that the gladiator will deal.
+        int randomDamage =  (int) ((Math.random() * (maxDamage - minDamage)) + minDamage);
+        enemy.setLives(enemy.getLives()-randomDamage);
+
     }
+
+//    public Gladiator(String nameC, int livesC, int maxLivesC, int maxDamageC, int minDamageC) {
+//        name = nameC;
+//        lives = livesC;
+//        maxLives = maxLivesC;
+//        minDamage = minDamageC;
+//        maxDamage = maxDamageC;
+//    }
 
     public String getName() {
         return name;
@@ -32,5 +51,38 @@ public class Gladiator {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getLives() {
+        return lives;
+    }
+
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
+    public int getMaxLives() {
+        return maxLives;
+    }
+
+    public void setMaxLives(int maxLives) {
+        this.maxLives = maxLives;
+        this.lives = maxLives;
+    }
+
+    public int getMaxDamage() {
+        return maxDamage;
+    }
+
+    public void setMaxDamage(int maxDamage) {
+        this.maxDamage = maxDamage;
+    }
+
+    public int getMinDamage() {
+        return minDamage;
+    }
+
+    public void setMinDamage(int minDamage) {
+        this.minDamage = minDamage;
     }
 }

@@ -1,0 +1,4 @@
+name:Pepa
+maxLives:60
+maxDamage:30
+minDamage:5

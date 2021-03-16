@@ -1,0 +1,4 @@
+name:Jan
+maxLives:100
+maxDamage:35
+minDamage:20

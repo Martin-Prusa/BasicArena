@@ -20,6 +20,7 @@ public class ArenaCLI {
     }
 
     public void renderLandingPage() {
+        init();
         System.out.println("     /\\                         \n" +
                 "    /  \\   _ __ ___ _ __   __ _ \n" +
                 "   / /\\ \\ | '__/ _ \\ '_ \\ / _` |\n" +
@@ -46,6 +47,32 @@ public class ArenaCLI {
     public void renderEntireFight() {
         // TODO:
         // while(...) {logic.fight.... sout...}
+        while(logic.getWinner() == null) {
+            Gladiator gl1 = logic.getGladiator1();
+            Gladiator gl2 = logic.getGladiator2();
+            int round = logic.getRound();
+            System.out.println();
+            System.out.println();
+            System.out.println("------------------------"+round+". kolo -------------");
+            System.out.println();
+
+            System.out.println("Zdraví bojovníků: ");
+            System.out.println(gl1.getName()+ ": "+ gl1.getLives()+ "/"+ gl1.getMaxLives());
+            System.out.println(gl2.getName()+ ": "+ gl2.getLives()+ "/"+ gl2.getMaxLives());
+            System.out.println();
+            int[] a = logic.fight();
+            System.out.println(gl1.getName()+" útočí s úderem "+gl1.getMaxDamage()+" hp");
+            System.out.println(gl2.getName()+" utrpěl poškození "+a[1]+" hp");
+            if(a[0] != -1) {
+                System.out.println();
+                System.out.println(gl2.getName()+" útočí s úderem "+gl2.getMaxDamage()+" hp");
+                System.out.println(gl1.getName()+" utrpěl poškození "+a[0]+" hp");
+            }
+        }
+        Gladiator winner = logic.getWinner();
+        System.out.println("---------------------------");
+        System.out.println(winner.getName()+" vyhrává");
+
     }
 
 }
