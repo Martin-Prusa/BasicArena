@@ -20,7 +20,6 @@ public class ArenaCLI {
     }
 
     public void renderLandingPage() {
-        init();
         System.out.println("     /\\                         \n" +
                 "    /  \\   _ __ ___ _ __   __ _ \n" +
                 "   / /\\ \\ | '__/ _ \\ '_ \\ / _` |\n" +
@@ -61,11 +60,11 @@ public class ArenaCLI {
             System.out.println(gl2.getName()+ ": "+ gl2.getLives()+ "/"+ gl2.getMaxLives());
             System.out.println();
             int[] a = logic.fight();
-            System.out.println(gl1.getName()+" útočí s úderem "+gl1.getMaxDamage()+" hp");
+            System.out.println(gl1.getName()+" útočí");
             System.out.println(gl2.getName()+" utrpěl poškození "+a[1]+" hp");
             if(a[0] != -1) {
                 System.out.println();
-                System.out.println(gl2.getName()+" útočí s úderem "+gl2.getMaxDamage()+" hp");
+                System.out.println(gl2.getName()+" útočí");
                 System.out.println(gl1.getName()+" utrpěl poškození "+a[0]+" hp");
             }
         }
