@@ -1,0 +1,4 @@
+name:aaa
+maxLives:10
+maxDamage:30
+minDamage:20
